@@ -9,12 +9,11 @@ namespace Place.Models
 
     private static List<Place> _placeList = new List<Place> {};
 
-    public Place (city)
+    public Place (string city)
     {
       _city = city;
       _placeList.Add(this);
       _id = _placeList.Count;
-
     }
 
     public void SetTitle(string title)
@@ -37,9 +36,14 @@ namespace Place.Models
       return _placeList;
     }
 
-    public static ClearAll()
+    public static void ClearAll()
     {
       _placeList.Clear();
+    }
+
+    public static Place Find()
+    {
+      return _placeList[_placeList.Count - 1]
     }
 
   }

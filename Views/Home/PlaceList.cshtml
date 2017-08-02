@@ -5,10 +5,11 @@
 <h1>All Of The Places You've Visited</h1>
 
 
-@foreach (adflkj in fdlja)
+@foreach (var place in Model)
 {
   <ul>
-    <h3>@Model.GetCity()</h3>
+    <h3>@place.GetCity()</h3>
     <li></li>
   </ul>
+  <p><a href="/place/@place.GetId()">Click for details</a></p>
 }
