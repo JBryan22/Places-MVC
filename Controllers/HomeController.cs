@@ -34,5 +34,13 @@ namespace PlacePage.Controllers
       return View(newPlace);
     }
 
+    [HttpPost("/PlaceList/remove/{id}")]
+    public ActionResult Remove(int id)
+    {
+      Place.GetAllPlaces().RemoveAt(id - 1);
+
+      return View(Place.GetAllPlaces());
+    }
+
   }
 }

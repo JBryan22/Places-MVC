@@ -41,6 +41,11 @@ namespace PlacePage.Models
       _placeList.Clear();
     }
 
+    public static void ClearSpecific(int searchId)
+    {
+      _placeList.RemoveAt(searchId - 1);
+    }
+
     public static Place Find(int searchId)
     {
       return _placeList[searchId - 1];
