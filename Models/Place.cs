@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Place.Models
+namespace PlacePage.Models
 {
   public class Place
   {
@@ -16,14 +16,14 @@ namespace Place.Models
       _id = _placeList.Count;
     }
 
-    public void SetTitle(string title)
+    public void SetCity(string city)
     {
         _city = city;
     }
 
-    public string GetTitle()
+    public string GetCity()
     {
-        return _city;
+      return _city;
     }
 
     public int GetId()
@@ -41,9 +41,9 @@ namespace Place.Models
       _placeList.Clear();
     }
 
-    public static Place Find()
+    public static Place Find(int searchId)
     {
-      return _placeList[_placeList.Count - 1]
+      return _placeList[searchId - 1];
     }
 
   }

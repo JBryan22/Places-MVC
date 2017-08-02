@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
-using JobBoard.Models;
+using PlacePage.Models;
 using System.Collections.Generic;
 using System;
 
-namespace Places.Controllers
+namespace PlacePage.Controllers
 {
   public class HomeController : Controller
   {
@@ -22,16 +22,16 @@ namespace Places.Controllers
     [HttpGet("/Place/{id}")]
     public ActionResult PlaceDetail(int id)
     {
-      return View(Place.Find())
+      return View(Place.Find(id));
     }
 
     [HttpPost("/Place")]
-    public ActionResult Place()
+    public ActionResult PlaceCreate()
     {
-      string city = [Request.Form("city")];
+      string city = (Request.Form["city"]);
       Place newPlace = new Place(city);
 
-      return View(newPlace)
+      return View(newPlace);
     }
 
   }

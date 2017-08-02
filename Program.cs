@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace JobBoard
+namespace PlacePage
 {
     public class Program
     {
